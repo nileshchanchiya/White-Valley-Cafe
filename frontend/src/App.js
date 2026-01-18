@@ -1,38 +1,37 @@
-import { useEffect } from "react";
-import "@/App.css";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import Header from "./components/landing/Header";
+import HeroSection from "./components/landing/HeroSection";
+import IdentitySection from "./components/landing/IdentitySection";
+import GallerySection from "./components/landing/GallerySection";
+import CulinarySection from "./components/landing/CulinarySection";
+import SignatureSection from "./components/landing/SignatureSection";
+import TestimonialsSection from "./components/landing/TestimonialsSection";
+import EventsSection from "./components/landing/EventsSection";
+import AccessibilitySection from "./components/landing/AccessibilitySection";
+import SocialProofSection from "./components/landing/SocialProofSection";
+import LocationSection from "./components/landing/LocationSection";
+import CTASection from "./components/landing/CTASection";
+import Footer from "./components/landing/Footer";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
+const LandingPage = () => {
   return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
+    <div className="min-h-screen">
+      <Header />
+      <main>
+        <HeroSection />
+        <IdentitySection />
+        <GallerySection />
+        <CulinarySection />
+        <SignatureSection />
+        <TestimonialsSection />
+        <EventsSection />
+        <AccessibilitySection />
+        <SocialProofSection />
+        <LocationSection />
+        <CTASection />
+      </main>
+      <Footer />
     </div>
   );
 };
@@ -42,9 +41,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
+          <Route path="/" element={<LandingPage />} />
         </Routes>
       </BrowserRouter>
     </div>
