@@ -144,7 +144,7 @@ export const signatureData = {
     "Outdoor poolside seating",
     "Private dining rooms available"
   ],
-  image: "https://images.pexels.com/photos/3215513/pexels-photo-3215513.jpeg"
+  image: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/46stutd3_2025-08-11%20%281%29.webp"
 };
 
 export const testimonials = [
