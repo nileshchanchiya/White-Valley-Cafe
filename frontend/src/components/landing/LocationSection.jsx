@@ -1,19 +1,20 @@
 import React from 'react';
-import { locationData } from '../../data/mock';
-import { MapPin, Navigation } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Phone, MapPin, Clock, Navigation, Star, ExternalLink, MessageCircle } from 'lucide-react';
+import { contactInfo, hours, restaurantInfo } from '../../data/mock';
 
 const LocationSection = () => {
   return (
     <section id="location" className="section-padding bg-[var(--bg-secondary)]">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Map Placeholder */}
-          <div className="aspect-square lg:aspect-[4/3] bg-[var(--bg-subtle)] flex items-center justify-center overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Map */}
+          <div className="aspect-square lg:aspect-[4/3] overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.7654321!2d72.5523456!3d23.0456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAyJzQ0LjQiTiA3MsKwMzMnMDguNCJF!5e0!3m2!1sen!2sin!4v1234567890"
+              src={contactInfo.mapEmbed}
               width="100%"
               height="100%"
-              style={{ border: 0, filter: 'grayscale(1) contrast(1.1)' }}
+              style={{ border: 0, filter: 'grayscale(0.3) contrast(1.1)' }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -23,36 +24,79 @@ const LocationSection = () => {
 
           {/* Location Info */}
           <div>
-            <h2 className="heading-1 mb-8">{locationData.title}</h2>
+            <h2 className="heading-1 mb-8">Find Your Sanctuary</h2>
             
             <div className="space-y-6 mb-10">
+              {/* Address */}
               <div className="flex items-start gap-4">
                 <MapPin size={20} className="text-[var(--text-primary)] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="heading-3 mb-1">{locationData.address}</p>
-                  <p className="body-regular text-[var(--text-secondary)]">{locationData.street}</p>
-                  <p className="body-small">{locationData.city}</p>
+                  <p className="heading-3 mb-1">{restaurantInfo.name}</p>
+                  <p className="body-regular text-[var(--text-secondary)]">
+                    {contactInfo.address.street}
+                  </p>
+                  <p className="body-small">{contactInfo.address.landmark}</p>
+                  <p className="body-small">
+                    {contactInfo.address.area}, {contactInfo.address.city}, {contactInfo.address.state} {contactInfo.address.pincode}
+                  </p>
                 </div>
               </div>
               
+              {/* Phone */}
+              <div className="flex items-start gap-4">
+                <Phone size={20} className="text-[var(--text-primary)] mt-1 flex-shrink-0" />
+                <div>
+                  <a 
+                    href={contactInfo.phoneLink}
+                    className="heading-3 text-[var(--text-primary)] no-underline hover:underline"
+                  >
+                    {contactInfo.phone}
+                  </a>
+                </div>
+              </div>
+
+              {/* Hours */}
+              <div className="flex items-start gap-4">
+                <Clock size={20} className="text-[var(--text-primary)] mt-1 flex-shrink-0" />
+                <div>
+                  <p className="heading-3 mb-2">Open Daily</p>
+                  <p className="body-regular text-[var(--text-secondary)]">
+                    {hours.summary}
+                  </p>
+                </div>
+              </div>
+
+              {/* Directions */}
               <div className="flex items-start gap-4">
                 <Navigation size={20} className="text-[var(--text-primary)] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="body-regular text-[var(--text-secondary)]">
-                    Landmark: {locationData.landmark}
+                  <p className="body-small text-[var(--text-secondary)]">
+                    16 mins by car · 13 mins by bike · 1 hr 3 mins walk
                   </p>
                 </div>
               </div>
             </div>
 
-            <a
-              href="https://maps.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              Get Directions
-            </a>
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-4">
+              <a
+                href={contactInfo.mapLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Get Directions
+              </a>
+              <a
+                href={contactInfo.zomatoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary flex items-center gap-2"
+              >
+                <ExternalLink size={14} />
+                Order on Zomato
+              </a>
+            </div>
           </div>
         </div>
       </div>

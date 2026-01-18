@@ -1,5 +1,5 @@
 import React from 'react';
-import { identityData } from '../../data/mock';
+import { identityData, restaurantInfo } from '../../data/mock';
 
 const IdentitySection = () => {
   return (
@@ -7,8 +7,11 @@ const IdentitySection = () => {
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="heading-1 mb-8">{identityData.title}</h2>
-          <p className="body-large text-[var(--text-secondary)] mb-16 leading-relaxed">
+          <p className="body-large text-[var(--text-secondary)] mb-8 leading-relaxed">
             {identityData.narrative}
+          </p>
+          <p className="body-regular text-[var(--text-primary)] mb-16">
+            Indulge in a culinary journey that blends taste, elegance, and relaxation.
           </p>
           
           {/* Three Pillars */}

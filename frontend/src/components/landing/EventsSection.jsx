@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { eventsData } from '../../data/mock';
-import { Music, Tv, Mic } from 'lucide-react';
+import { DoorClosed, PartyPopper, Cake, Heart, ArrowRight } from 'lucide-react';
 
-const EventsSection = () => {
+const EventsSection = ({ showFull = false }) => {
   const icons = {
-    'Stand-up Comedy Nights': Mic,
-    'Live Sports Screenings': Tv,
-    'Acoustic Evenings': Music,
+    'door-closed': DoorClosed,
+    'party-popper': PartyPopper,
+    'cake': Cake,
+    'heart': Heart,
   };
 
   return (
@@ -21,9 +23,9 @@ const EventsSection = () => {
             </p>
 
             {/* Events List */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               {eventsData.events.map((event, index) => {
-                const IconComponent = icons[event.name] || Music;
+                const IconComponent = icons[event.icon] || PartyPopper;
                 return (
                   <div
                     key={index}
@@ -40,6 +42,15 @@ const EventsSection = () => {
                 );
               })}
             </div>
+
+            {!showFull && (
+              <div className="mt-8">
+                <Link to="/events" className="btn-secondary inline-flex items-center gap-2">
+                  Learn More About Events
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+            )}
           </div>
 
           {/* Image */}
