@@ -12,7 +12,7 @@ const HeroSection = () => {
           alt="White Valley Poolside Dining"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)]/95 via-[var(--bg-primary)]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)] via-[var(--bg-primary)]/90 to-[var(--bg-primary)]/40" />
       </div>
 
       {/* Content */}
