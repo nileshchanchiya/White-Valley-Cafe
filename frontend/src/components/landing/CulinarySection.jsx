@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { culinaryData, restaurantInfo } from '../../data/mock';
 
-const CulinarySection = ({ showFull = false }) => {
+const CulinarySection = () => {
+  // Show only first 6 categories as preview
+  const previewCategories = culinaryData.categories.slice(0, 6);
+
   return (
     <section id="menu" className="section-padding bg-[var(--bg-secondary)]">
       <div className="container">
@@ -17,26 +20,30 @@ const CulinarySection = ({ showFull = false }) => {
           </p>
         </div>
 
-        {/* Cuisine Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {culinaryData.cuisines.map((cuisine, index) => (
-            <div key={index} className="bg-[var(--bg-primary)] p-8">
-              <h3 className="heading-2 mb-6 pb-4 border-b border-[var(--border-light)]">
-                {cuisine.name}
+        {/* Menu Preview Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {previewCategories.map((category, index) => (
+            <div key={index} className="bg-[var(--bg-primary)] p-6">
+              <h3 className="heading-3 mb-4 pb-3 border-b border-[var(--border-light)]">
+                {category.name}
               </h3>
-              <div className="space-y-6">
-                {cuisine.dishes.map((dish, dishIndex) => (
-                  <div key={dishIndex}>
-                    <h4 className="heading-3 mb-2">{dish.name}</h4>
-                    <p className="body-small">{dish.benefit}</p>
-                  </div>
+              <ul className="space-y-2">
+                {category.items.slice(0, 4).map((item, itemIndex) => (
+                  <li key={itemIndex} className="body-small text-[var(--text-secondary)]">
+                    {item}
+                  </li>
                 ))}
-              </div>
+                {category.items.length > 4 && (
+                  <li className="body-small text-[var(--text-light)]">
+                    +{category.items.length - 4} more...
+                  </li>
+                )}
+              </ul>
             </div>
           ))}
         </div>
 
-        {/* Service Options */}
+        {/* Service Options & CTA */}
         <div className="text-center mt-12">
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {restaurantInfo.serviceOptions.map((option, index) => (
@@ -45,12 +52,10 @@ const CulinarySection = ({ showFull = false }) => {
               </span>
             ))}
           </div>
-          {!showFull && (
-            <Link to="/menu" className="btn-primary">
-              View Full Menu
-              <ArrowRight size={16} />
-            </Link>
-          )}
+          <Link to="/menu" className="btn-primary">
+            View Full Menu
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
     </section>
