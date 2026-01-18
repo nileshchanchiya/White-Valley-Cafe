@@ -13,7 +13,7 @@ const Footer = () => {
             <img 
               src="https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/gbnni5q9_logo%20mid.png" 
               alt="White Valley" 
-              className="h-16 w-auto mb-4 brightness-0 invert"
+              className="h-16 w-auto mb-4"
             />
             <p className="text-[var(--border-light)] text-sm leading-relaxed mb-4">
               {restaurantInfo.tagline}
