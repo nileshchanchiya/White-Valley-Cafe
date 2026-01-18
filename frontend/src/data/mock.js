@@ -94,44 +94,64 @@ export const galleryImages = [
 ];
 
 export const culinaryData = {
-  title: "Global Flavors, Done Right",
+  title: "Our Menu",
   description: "A vegetarian paradise with cuisines from around the world. ₹400–600 per person.",
-  cuisines: [
+  categories: [
     {
-      name: "Italian",
-      icon: "pizza",
-      dishes: [
-        { name: "Wood-fired Pizzas", benefit: "Authentic flavors with fresh toppings" },
-        { name: "Creamy Pastas", benefit: "Rich sauces that melt on your palate" },
-        { name: "Risotto", benefit: "Perfectly cooked Italian rice delicacy" }
-      ]
+      name: "Soups",
+      items: ["Hot & Sour Soup", "Chef Special Soup", "Khowsuey Soup", "Manchurian Soup", "Mexican Tortilla Soup", "Sweet Corn Soup", "Lemon Coriander Soup", "Broccoli Almond Soup"]
     },
     {
-      name: "Continental",
-      icon: "utensils",
-      dishes: [
-        { name: "Grilled Platters", benefit: "Perfectly seasoned and charred" },
-        { name: "Soups & Salads", benefit: "Fresh, healthy, and flavorful" },
-        { name: "Sizzlers", benefit: "Theatrical presentation, amazing taste" }
-      ]
+      name: "Starters",
+      items: ["Tandoori Platter", "Manchurian Dry", "Paneer 65", "Cheese Ball", "Italian Cottage Roll", "Afghani Paneer Tikka", "Cheese Cigar Roll", "Dragon Potato", "Hara Bhara Kabab", "Kung Pao Paneer", "Mexican Cigar Roll", "Pahadi Paneer Tikka", "Paneer Tikka Dry", "Spinach Cottage Roll", "Veg Crispy", "Veg Spring Roll"]
     },
     {
-      name: "North Indian",
-      icon: "flame",
-      dishes: [
-        { name: "Paneer Specialties", benefit: "Rich, aromatic, and soul-satisfying" },
-        { name: "Tandoori Delights", benefit: "Smoky spices kissed by clay oven" },
-        { name: "Dal Makhani", benefit: "Slow-cooked creamy perfection" }
-      ]
+      name: "Main Course",
+      items: ["Veg Handi", "Veg Makhanwala", "Veg Kadai", "Veg Toofani", "Paneer Butter Masala", "Paneer Angoori", "Paneer Bhurji", "Paneer Lababdar", "Dal Tadka", "Dal Makhani"]
     },
     {
-      name: "Fast Food",
-      icon: "sandwich",
-      dishes: [
-        { name: "Burgers & Wraps", benefit: "Quick bites packed with flavor" },
-        { name: "Loaded Fries", benefit: "Crispy, cheesy, irresistible" },
-        { name: "Mocktails", benefit: "Refreshing beverages to complement" }
-      ]
+      name: "Rice & Noodles",
+      items: ["Hyderabadi Biryani", "Mexican Hot Pot Rice", "Manchurian Fried Rice", "Schezwan Fried Rice", "Veg Fried Rice", "Jeera Rice", "Veg Hakka Noodles", "Schezwan Noodles", "Veg Singapore Noodles"]
+    },
+    {
+      name: "Pizza",
+      items: ["Margherita Pizza", "Paneer Chilli Pizza", "Mexican Pizza", "Veg Delight Pizza", "Italiano Pizza", "Tandoori Paneer Pizza"]
+    },
+    {
+      name: "Pasta",
+      items: ["Arrabiata Pasta", "Alfredo Pasta", "Penne With Cheesy Tomato Sauce", "Spaghetti Aglio E Olio", "Spinach Hazelnut Ravioli"]
+    },
+    {
+      name: "Sandwiches & Burgers",
+      items: ["Avocado Toast", "Veg Cheese Sandwich", "4 Cheese Sandwich", "Mexican Sandwich", "Cheese Chilli Sandwich", "Nutella Cheese Sandwich", "Club Sandwich", "Veg Cheese Burger", "Aloo Tikki Burger", "Double Cheese Burger"]
+    },
+    {
+      name: "South Indian",
+      items: ["Masala Dosa", "Onion Uttapam", "Cheese Mysore Masala Dosa", "Rava Masala Dosa", "Fry Cheese Dosa"]
+    },
+    {
+      name: "Quick Bites",
+      items: ["Loaded Fries", "French Fries", "Peri Peri Fries", "Monaco Toppings", "Bhel"]
+    },
+    {
+      name: "Sizzlers",
+      items: ["Paneer Shashlik Sizzler", "Classic Veg Sizzler", "Mexican Sizzler", "Chef Special Sizzler"]
+    },
+    {
+      name: "Beverages",
+      items: ["Cold Coffee", "Hot Coffee & Teas", "Lemon Mint Cooler", "Fruit Punch", "Green Apple Mocktail", "Strawberry Punch", "Oreo Shake", "Ferrero Nutella Shake", "Lotus Biscoff Shake", "Soda Floats"]
+    },
+    {
+      name: "Maggie",
+      items: ["Tadka Maggie", "Cheese Maggie", "Veggie Maggie", "Butter Masala Maggie"]
+    },
+    {
+      name: "Breads",
+      items: ["Butter Kulcha", "Butter Paratha", "Garlic Naan", "Lachha Paratha", "Missi Roti", "Cheese Garlic Naan"]
+    },
+    {
+      name: "Desserts",
+      items: ["American Nuts Scoop", "Chocolate Scoop", "Gulab Jamun", "Sizzling Brownie"]
     }
   ]
 };
