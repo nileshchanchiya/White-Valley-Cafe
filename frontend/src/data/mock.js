@@ -72,36 +72,24 @@ export const identityData = {
 
 export const galleryImages = [
   {
-    src: "https://images.pexels.com/photos/3215513/pexels-photo-3215513.jpeg",
+    src: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/8imlzb2t_2025-07-05%20%287%29.webp",
     caption: "Evenings that slow time"
   },
   {
-    src: "https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg",
+    src: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/46stutd3_2025-08-11%20%281%29.webp",
     caption: "Designed for long conversations"
   },
   {
-    src: "https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg",
+    src: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/0kji0ovw_2025-07-05%20%286%29.webp",
     caption: "Where warmth meets elegance"
   },
   {
-    src: "https://images.pexels.com/photos/247931/pexels-photo-247931.jpeg",
+    src: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/0j23hbb0_2025-07-05%20%285%29.webp",
     caption: "Your private urban escape"
   },
   {
-    src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxmaW5lJTIwZGluaW5nfGVufDB8fHx8MTc2ODY5MzU2OXww&ixlib=rb-4.1.0&q=85",
-    caption: "Culinary excellence on every plate"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1611520175743-30ff00129621?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwzfHxmaW5lJTIwZGluaW5nfGVufDB8fHx8MTc2ODY5MzU2OXww&ixlib=rb-4.1.0&q=85",
-    caption: "Crafted with passion"
-  },
-  {
-    src: "https://images.pexels.com/photos/35382704/pexels-photo-35382704.jpeg",
-    caption: "Perfect ambiance"
-  },
-  {
-    src: "https://images.pexels.com/photos/35382702/pexels-photo-35382702.jpeg",
-    caption: "Moments to cherish"
+    src: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/m5d2d28d_2025-07-05%20%284%29.webp",
+    caption: "Culinary excellence at White Valley"
   }
 ];
 
