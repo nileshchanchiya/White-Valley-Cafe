@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Mail, Phone, MapPin, Star, ExternalLink } from 'lucide-react';
+import { Phone, MapPin, Star, ExternalLink } from 'lucide-react';
 import { restaurantInfo, contactInfo, hours } from '../../data/mock';
 
 const Footer = () => {
@@ -15,13 +15,15 @@ const Footer = () => {
               alt="White Valley" 
               className="h-16 w-auto mb-4 brightness-0 invert"
             />
-            <p className="text-[var(--border-light)] text-sm leading-relaxed max-w-md">
+            <p className="text-[var(--border-light)] text-sm leading-relaxed mb-4">
               {restaurantInfo.tagline}
             </p>
-          </div>
+            <p className="text-sm text-[var(--bg-primary)] font-medium mb-4">
+              {restaurantInfo.priceRange}
+            </p>
             
             {/* Social Links */}
-            <div className="flex items-center gap-4 mt-6">
+            <div className="flex items-center gap-4">
               <a
                 href={contactInfo.reviewLink}
                 target="_blank"
