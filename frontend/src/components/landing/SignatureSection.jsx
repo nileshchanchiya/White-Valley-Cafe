@@ -1,6 +1,7 @@
 import React from 'react';
-import { signatureData } from '../../data/mock';
+import { signatureData, restaurantInfo } from '../../data/mock';
 import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const SignatureSection = () => {
   return (
@@ -28,7 +29,7 @@ const SignatureSection = () => {
             </p>
             
             {/* Highlights */}
-            <ul className="space-y-4 mb-10">
+            <ul className="space-y-4 mb-6">
               {signatureData.highlights.map((highlight, index) => (
                 <li key={index} className="flex items-center gap-3">
                   <Check size={18} className="text-[var(--text-primary)]" />
@@ -37,9 +38,14 @@ const SignatureSection = () => {
               ))}
             </ul>
 
-            <a href="#contact" className="btn-primary">
+            {/* Price */}
+            <p className="body-regular text-[var(--text-primary)] mb-8">
+              <strong>{restaurantInfo.priceRange}</strong> | 100% Vegetarian
+            </p>
+
+            <Link to="/contact" className="btn-primary">
               Reserve Your Spot
-            </a>
+            </Link>
           </div>
         </div>
       </div>

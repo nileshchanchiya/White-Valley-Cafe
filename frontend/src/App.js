@@ -1,47 +1,37 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/landing/Header";
-import HeroSection from "./components/landing/HeroSection";
-import IdentitySection from "./components/landing/IdentitySection";
-import GallerySection from "./components/landing/GallerySection";
-import CulinarySection from "./components/landing/CulinarySection";
-import SignatureSection from "./components/landing/SignatureSection";
-import TestimonialsSection from "./components/landing/TestimonialsSection";
-import EventsSection from "./components/landing/EventsSection";
-import AccessibilitySection from "./components/landing/AccessibilitySection";
-import SocialProofSection from "./components/landing/SocialProofSection";
-import LocationSection from "./components/landing/LocationSection";
-import CTASection from "./components/landing/CTASection";
-import Footer from "./components/landing/Footer";
+import HomePage from "./pages/HomePage";
+import MenuPage from "./pages/MenuPage";
+import GalleryPage from "./pages/GalleryPage";
+import EventsPage from "./pages/EventsPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-const LandingPage = () => {
-  return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <HeroSection />
-        <IdentitySection />
-        <GallerySection />
-        <CulinarySection />
-        <SignatureSection />
-        <TestimonialsSection />
-        <EventsSection />
-        <AccessibilitySection />
-        <SocialProofSection />
-        <LocationSection />
-        <CTASection />
-      </main>
-      <Footer />
-    </div>
-  );
+// Scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
 };
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/events" element={<EventsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>
     </div>
