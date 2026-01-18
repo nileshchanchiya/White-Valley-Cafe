@@ -57,7 +57,7 @@ export const heroData = {
   headline: "An Urban Sanctuary for Your Senses",
   subheadline: "Where Italian, Continental, and North Indian flavors meet poolside elegance in Rajkot",
   cta: "Explore the Experience",
-  backgroundImage: "https://images.pexels.com/photos/3215513/pexels-photo-3215513.jpeg"
+  backgroundImage: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/8imlzb2t_2025-07-05%20%287%29.webp"
 };
 
 export const identityData = {
