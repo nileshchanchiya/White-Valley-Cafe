@@ -10,13 +10,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-normal mb-4">White Valley</h3>
-            <p className="text-[var(--border-light)] text-sm leading-relaxed mb-4">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/gbnni5q9_logo%20mid.png" 
+              alt="White Valley" 
+              className="h-16 w-auto mb-4 brightness-0 invert"
+            />
+            <p className="text-[var(--border-light)] text-sm leading-relaxed max-w-md">
               {restaurantInfo.tagline}
             </p>
-            <p className="text-sm text-[var(--bg-primary)] font-medium">
-              {restaurantInfo.priceRange}
-            </p>
+          </div>
             
             {/* Social Links */}
             <div className="flex items-center gap-4 mt-6">
