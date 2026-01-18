@@ -1,7 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { galleryImages } from '../../data/mock';
 
-const GallerySection = () => {
+const GallerySection = ({ showAll = false }) => {
+  const displayImages = showAll ? galleryImages : galleryImages.slice(0, 4);
+
   return (
     <section id="gallery" className="section-padding bg-[var(--bg-primary)]">
       <div className="container">
@@ -13,8 +17,8 @@ const GallerySection = () => {
         </div>
 
         {/* Image Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {galleryImages.map((image, index) => (
+        <div className={`grid grid-cols-1 md:grid-cols-2 ${showAll ? 'lg:grid-cols-4' : 'lg:grid-cols-4'} gap-6`}>
+          {displayImages.map((image, index) => (
             <div
               key={index}
               className="group relative overflow-hidden hover-lift cursor-pointer"
@@ -35,6 +39,16 @@ const GallerySection = () => {
             </div>
           ))}
         </div>
+
+        {/* View All CTA */}
+        {!showAll && (
+          <div className="text-center mt-12">
+            <Link to="/gallery" className="btn-secondary inline-flex items-center gap-2">
+              View Full Gallery
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

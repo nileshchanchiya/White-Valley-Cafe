@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { heroData } from '../../data/mock';
 
@@ -25,14 +26,14 @@ const HeroSection = () => {
             {heroData.subheadline}
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="#gallery" className="btn-primary">
+            <Link to="/gallery" className="btn-primary">
               {heroData.cta}
               <ArrowRight size={16} />
-            </a>
-            <a href="#menu" className="btn-secondary flex items-center gap-2">
+            </Link>
+            <Link to="/menu" className="btn-secondary flex items-center gap-2">
               View Menu
               <ArrowRight size={14} />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

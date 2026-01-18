@@ -1,6 +1,8 @@
 import React from 'react';
-import { testimonials } from '../../data/mock';
-import { Quote } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import { testimonials, contactInfo } from '../../data/mock';
+import { Quote, Star } from 'lucide-react';
 
 const TestimonialsSection = () => {
   return (
@@ -9,7 +11,7 @@ const TestimonialsSection = () => {
         <div className="text-center mb-16">
           <h2 className="heading-1 mb-4">What Our Guests Say</h2>
           <p className="body-regular text-[var(--text-secondary)]">
-            Experiences worth sharing, moments worth remembering.
+            Real reviews from real guests.
           </p>
         </div>
 
@@ -26,30 +28,32 @@ const TestimonialsSection = () => {
               </blockquote>
               <div className="border-t border-[var(--border-light)] pt-6">
                 <p className="heading-3 mb-1">{testimonial.author}</p>
-                <p className="body-small">{testimonial.role}</p>
+                <p className="body-small">{testimonial.platform}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Google Rating Badge */}
-        <div className="text-center mt-12">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-[var(--bg-primary)] border border-[var(--border-light)]">
-            <div className="flex items-center gap-1">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <svg
-                  key={star}
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill={star <= 4.8 ? 'var(--text-primary)' : 'var(--border-light)'}
-                >
-                  <polygon points="12,2 15,9 23,9 17,14 19,22 12,18 5,22 7,14 1,9 9,9" />
-                </svg>
-              ))}
-            </div>
-            <span className="body-small">4.8 on Google Reviews</span>
-          </div>
+        {/* Review CTA */}
+        <div className="text-center mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href={contactInfo.reviewLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-flex items-center gap-2"
+          >
+            <Star size={16} />
+            Leave a Review
+          </a>
+          <a
+            href={contactInfo.zomatoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary inline-flex items-center gap-2"
+          >
+            Order on Zomato
+            <ArrowRight size={14} />
+          </a>
         </div>
       </div>
     </section>

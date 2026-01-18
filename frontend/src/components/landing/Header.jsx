@@ -1,52 +1,51 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
+import { navLinks, contactInfo } from '../../data/mock';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navLinks = [
-    { label: 'Experience', href: '#identity' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Menu', href: '#menu' },
-    { label: 'Events', href: '#events' },
-    { label: 'Location', href: '#location' },
-  ];
+  const location = useLocation();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-primary)] border-b border-[var(--border-light)]">
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="text-xl font-normal text-[var(--text-primary)] no-underline">
+          <Link to="/" className="text-xl font-normal text-[var(--text-primary)] no-underline">
             White Valley
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-[var(--text-primary)] no-underline relative py-3 group"
+                to={link.href}
+                className={`text-sm font-medium text-[var(--text-primary)] no-underline relative py-3 group ${
+                  location.pathname === link.href ? 'font-semibold' : ''
+                }`}
               >
                 {link.label}
-                <span className="absolute bottom-2 left-0 w-0 h-[1px] bg-[var(--text-primary)] transition-all duration-500 ease-in-out group-hover:w-full" />
-              </a>
+                <span className={`absolute bottom-2 left-0 h-[1px] bg-[var(--text-primary)] transition-all duration-500 ease-in-out ${
+                  location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} />
+              </Link>
             ))}
           </nav>
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-6">
             <a 
-              href="tel:+919876543210" 
+              href={contactInfo.phoneLink}
               className="flex items-center gap-2 text-sm text-[var(--text-primary)] no-underline"
             >
               <Phone size={16} />
-              <span>+91 98765 43210</span>
+              <span>{contactInfo.phone}</span>
             </a>
-            <a href="#contact" className="btn-primary">
+            <Link to="/contact" className="btn-primary">
               Reserve
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -64,26 +63,32 @@ const Header = () => {
           <nav className="lg:hidden py-6 border-t border-[var(--border-light)]">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
-                  className="text-base text-[var(--text-primary)] no-underline py-2"
+                  to={link.href}
+                  className={`text-base text-[var(--text-primary)] no-underline py-2 ${
+                    location.pathname === link.href ? 'font-semibold' : ''
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <div className="pt-4 border-t border-[var(--border-light)]">
                 <a 
-                  href="tel:+919876543210" 
+                  href={contactInfo.phoneLink}
                   className="flex items-center gap-2 text-sm text-[var(--text-primary)] no-underline py-2"
                 >
                   <Phone size={16} />
-                  <span>+91 98765 43210</span>
+                  <span>{contactInfo.phone}</span>
                 </a>
-                <a href="#contact" className="btn-primary mt-4 w-full justify-center">
+                <Link 
+                  to="/contact" 
+                  className="btn-primary mt-4 w-full justify-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Reserve
-                </a>
+                </Link>
               </div>
             </div>
           </nav>
