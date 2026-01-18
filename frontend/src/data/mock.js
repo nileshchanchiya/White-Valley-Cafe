@@ -190,7 +190,7 @@ export const eventsData = {
       icon: "heart"
     }
   ],
-  image: "https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg"
+  image: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/0kji0ovw_2025-07-05%20%286%29.webp"
 };
 
 export const accessibilityData = {
