@@ -90,6 +90,26 @@ export const galleryImages = [
   {
     src: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/m5d2d28d_2025-07-05%20%284%29.webp",
     caption: "Culinary excellence at White Valley"
+  },
+  {
+    src: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/qsvlaay9_2025-07-05%20%283%29.webp",
+    caption: "Artisanal beverages"
+  },
+  {
+    src: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/nq1on89v_2025-07-05%20%282%29.webp",
+    caption: "Handcrafted with love"
+  },
+  {
+    src: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/hi5u12l6_2025-07-05%20%281%29.webp",
+    caption: "Perfect pairings"
+  },
+  {
+    src: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/xu3ht2oa_2025-08-11.webp",
+    caption: "Refreshing delights"
+  },
+  {
+    src: "https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/zwk8nizz_2025-07-05.webp",
+    caption: "Moments to cherish"
   }
 ];
 
