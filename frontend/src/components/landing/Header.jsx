@@ -12,8 +12,12 @@ const Header = () => {
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="text-xl font-normal text-[var(--text-primary)] no-underline">
-            White Valley
+          <Link to="/" className="flex items-center">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_urbansanctuary/artifacts/gbnni5q9_logo%20mid.png" 
+              alt="White Valley Cafe & Multicuisine" 
+              className="h-14 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
